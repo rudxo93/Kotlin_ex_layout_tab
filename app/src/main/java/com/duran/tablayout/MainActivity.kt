@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         "Tab3"
     )
 
+    private val tabIconArray = arrayOf(
+        R.drawable.ic_sunny,
+        R.drawable.ic_star,
+        R.drawable.ic_florist
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -27,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTitleArray[position]
+            tab.icon = getDrawable(tabIconArray[position])
         }.attach()
 
     }
